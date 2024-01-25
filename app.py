@@ -136,7 +136,6 @@ async def upload_image(imgFile: UploadFile = File(...)):
             raise ValueError("图片读取失败！")
         # image_array = face_recognition.load_image_file("./images/biden.jpg")  # = np.array(PIL.Image.open)
         face_landmarks_list = face_recognition.face_landmarks(image_array)
-        print(face_landmarks_list)
         return {"success": True,
                 "code": 200,
                 "msg": f"""已返回所有人脸地标""",
